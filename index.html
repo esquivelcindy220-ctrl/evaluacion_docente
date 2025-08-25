@@ -2,27 +2,54 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Autoevaluación Docente en Entornos Virtuales</title>
+  <title>Autoevaluación Docente con IA</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
-    h1 { color: #2c3e50; }
-    .bloque { margin-bottom: 1.5em; padding: 1em; background: #fff; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    label { font-weight: bold; display: block; margin-top: 15px; }
+    select { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+    #prompt { margin-top: 30px; background: #f0f0f0; padding: 15px; border-radius: 5px; }
   </style>
 </head>
 <body>
+
   <h1>Rúbrica de Autoevaluación Docente</h1>
-  <p>¿Estás preparada para enseñar en entornos virtuales 3D y con IA educativa?</p>
+  <p>Selecciona tu nivel en cada competencia para generar un prompt personalizado que puedes usar en herramientas de IA.</p>
 
-  <div class="bloque">
-    <strong>Competencia:</strong> Integración de tecnologías inmersivas<br>
-    <strong>Indicador:</strong> Diseña actividades con simuladores o entornos 3D<br>
-    <strong>Nivel:</strong> 2 - Intermedio
-  </div>
+  <label for="competencia1">📚 Desarrollo del pensamiento crítico</label>
+  <select id="competencia1">
+    <option value="básico">1 - Básico</option>
+    <option value="intermedio">2 - Intermedio</option>
+    <option value="avanzado">3 - Avanzado</option>
+  </select>
 
-  <div class="bloque">
-    <strong>Competencia:</strong> Evaluación crítica con IA<br>
-    <strong>Indicador:</strong> Utiliza herramientas de IA para retroalimentación personalizada<br>
-    <strong>Nivel:</strong> 3 - Avanzado
-  </div>
-</body>
-</html>
+  <label for="competencia2">🧠 Integración de tecnologías emergentes</label>
+  <select id="competencia2">
+    <option value="básico">1 - Básico</option>
+    <option value="intermedio">2 - Intermedio</option>
+    <option value="avanzado">3 - Avanzado</option>
+  </select>
+
+  <label for="competencia3">🎯 Diseño de actividades evaluativas</label>
+  <select id="competencia3">
+    <option value="básico">1 - Básico</option>
+    <option value="intermedio">2 - Intermedio</option>
+    <option value="avanzado">3 - Avanzado</option>
+  </select>
+
+  <button onclick="generarPrompt()">Generar Prompt para IA</button>
+
+  <div id="prompt"></div>
+
+  <script>
+    function generarPrompt() {
+      const c1 = document.getElementById("competencia1").value;
+      const c2 = document.getElementById("competencia2").value;
+      const c3 = document.getElementById("competencia3").value;
+
+      const prompt = `Soy docente con nivel ${c1} en pensamiento crítico, ${c2} en tecnologías emergentes y ${c3} en diseño evaluativo. ¿Qué estrategias puedo aplicar para mejorar mi práctica en entornos virtuales 3D?`;
+
+      document.getElementById("prompt").innerHTML = `
+        <h3>🎙 Prompt generado:</h3>
+        <p>${prompt}</p>
+        <p><strong>Úsalo en:</strong> <a href="https://chat.openai.com" target="_blank">
