@@ -18,21 +18,21 @@
   <h1>Autoevaluación Docente en Tiempos de IA</h1>
   <p>Selecciona tu nivel en cada competencia:</p>
 
-  <label for="c1">📚 Pensamiento crítico</label>
+  <label for="c1">Pensamiento crítico</label>
   <select id="c1">
     <option value="1">1 - Inicial</option>
     <option value="2">2 - Intermedio</option>
     <option value="3">3 - Avanzado</option>
   </select>
 
-  <label for="c2">🧠 Integración de tecnologías emergentes</label>
+  <label for="c2">Integración de tecnologías emergentes</label>
   <select id="c2">
     <option value="1">1 - Inicial</option>
     <option value="2">2 - Intermedio</option>
     <option value="3">3 - Avanzado</option>
   </select>
 
-  <label for="c3">🎯 Evaluación formativa con IA</label>
+  <label for="c3">Evaluación formativa con IA</label>
   <select id="c3">
     <option value="1">1 - Inicial</option>
     <option value="2">2 - Intermedio</option>
@@ -60,7 +60,7 @@
       else if (promedio <= 2.5) nivel = "Intermedio";
       else nivel = "Avanzado";
 
-      document.getElementById("resultado").innerHTML = `<h3>🧮 Nivel general: <strong>${nivel}</strong></h3>`;
+      document.getElementById("resultado").innerHTML = `<h3>Nivel general: <strong>${nivel}</strong></h3>`;
 
       const prompt = `Soy docente con nivel ${nivel} en competencias digitales y pensamiento crítico. ¿Qué estrategias puedo aplicar para mejorar mi práctica profesional en tiempos de IA?`;
 
@@ -78,7 +78,7 @@
 <button onclick="window.open('https://www.perplexity.ai', '_blank')">Abrir en Perplexity</button>
 
       document.getElementById("botones").innerHTML = `
-        <h3>🤖 ¿Deseas conversar con una IA?</h3>
+        <h3>¿Deseas conversar con una IA?</h3>
         <p>Elige una opción para abrir el prompt en tu herramienta favorita:</p>
         <a href="https://chat.openai.com" target="_blank">Abrir en ChatGPT</a>
         <a href="https://grok.x.ai" target="_blank">Abrir en Grok</a>
