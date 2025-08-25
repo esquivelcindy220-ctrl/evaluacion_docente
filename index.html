@@ -2,37 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Autoevaluación Docente en Tiempos de IA</title>
+  <title>Autoevaluación Docente</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
+    body { font-family: Arial, sans-serif; margin: 2em; background: #f0f0f0; }
     h1 { color: #2c3e50; }
-    label { font-weight: bold; display: block; margin-top: 15px; }
-    select { width: 100%; padding: 8px; margin-top: 5px; }
-    button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
-    #resultado, #prompt, #botones { margin-top: 30px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
-    a { margin-right: 10px; text-decoration: none; color: #0077cc; }
+    label { font-weight: bold; margin-top: 15px; display: block; }
+    select, button { width: 100%; padding: 10px; margin-top: 5px; font-size: 16px; }
+    #resultado, #prompt, #botones { margin-top: 30px; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 0 5px #ccc; }
+    a { display: inline-block; margin-right: 10px; margin-top: 10px; text-decoration: none; color: #0077cc; }
   </style>
 </head>
 <body>
 
   <h1>Autoevaluación Docente en Tiempos de IA</h1>
-  <p>Selecciona tu nivel en cada competencia:</p>
 
-  <label for="c1">Pensamiento crítico</label>
+  <label for="c1">📚 Pensamiento crítico</label>
   <select id="c1">
     <option value="1">1 - Inicial</option>
     <option value="2">2 - Intermedio</option>
     <option value="3">3 - Avanzado</option>
   </select>
 
-  <label for="c2">Integración de tecnologías emergentes</label>
+  <label for="c2">🧠 Integración de tecnologías emergentes</label>
   <select id="c2">
     <option value="1">1 - Inicial</option>
     <option value="2">2 - Intermedio</option>
     <option value="3">3 - Avanzado</option>
   </select>
 
-  <label for="c3">Evaluación formativa con IA</label>
+  <label for="c3">🎯 Evaluación formativa con IA</label>
   <select id="c3">
     <option value="1">1 - Inicial</option>
     <option value="2">2 - Intermedio</option>
@@ -47,31 +45,28 @@
 
   <script>
     function calcularResultado() {
-      const valores = [
-        parseInt(document.getElementById("c1").value),
-        parseInt(document.getElementById("c2").value),
-        parseInt(document.getElementById("c3").value)
-      ];
+      const c1 = parseInt(document.getElementById("c1").value);
+      const c2 = parseInt(document.getElementById("c2").value);
+      const c3 = parseInt(document.getElementById("c3").value);
 
-      const promedio = valores.reduce((a, b) => a + b, 0) / valores.length;
+      const promedio = (c1 + c2 + c3) / 3;
       let nivel = "";
 
       if (promedio <= 1.5) nivel = "Inicial";
       else if (promedio <= 2.5) nivel = "Intermedio";
       else nivel = "Avanzado";
 
-      document.getElementById("resultado").innerHTML = `<h3> Nivel general: <strong>${nivel}</strong></h3>`;
+      document.getElementById("resultado").innerHTML = `
+        <h3>🧮 Nivel general: <strong>${nivel}</strong></h3>
+        <p>Tu promedio es ${promedio.toFixed(2)}. Esto indica que tu nivel general en competencias docentes en tiempos de IA es <strong>${nivel}</strong>.</p>
+      `;
 
       const prompt = `Soy docente con nivel ${nivel} en competencias digitales y pensamiento crítico. ¿Qué estrategias puedo aplicar para mejorar mi práctica profesional en tiempos de IA?`;
 
       document.getElementById("prompt").innerHTML = `
-        <h3>Prompt generado:</h3>
+        <h3>🎙 Prompt generado:</h3>
         <p>${prompt}</p>
       `;
 
       document.getElementById("botones").innerHTML = `
-        <h3>🤖 ¿Deseas conversar con una IA?</h3>
-        <p>Elige una opción para abrir el prompt en tu herramienta favorita:</p>
-        <a href="https://chat.openai.com" target="_blank">Abrir en ChatGPT</a>
-        <a href="https://grok.x.ai" target="_blank">Abrir en Grok</a>
-        <a href="https://www.perplexity.ai" target="_blank">Abrir en Perplexity</a>
+        <h3>🤖 Explora con IA
