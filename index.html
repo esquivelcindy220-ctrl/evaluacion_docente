@@ -60,12 +60,12 @@
       else if (promedio <= 2.5) nivel = "Intermedio";
       else nivel = "Avanzado";
 
-      document.getElementById("resultado").innerHTML = `<h3>🧮 Nivel general: <strong>${nivel}</strong></h3>`;
+      document.getElementById("resultado").innerHTML = `<h3> Nivel general: <strong>${nivel}</strong></h3>`;
 
       const prompt = `Soy docente con nivel ${nivel} en competencias digitales y pensamiento crítico. ¿Qué estrategias puedo aplicar para mejorar mi práctica profesional en tiempos de IA?`;
 
       document.getElementById("prompt").innerHTML = `
-        <h3>🎙 Prompt generado:</h3>
+        <h3>Prompt generado:</h3>
         <p>${prompt}</p>
       `;
 
